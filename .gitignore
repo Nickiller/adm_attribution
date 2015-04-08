@@ -1,4 +1,7 @@
 *.csv
 *.zip
+*.pyc
+*.pdf
+*.txt
 hw-数据观察/
 dataset/

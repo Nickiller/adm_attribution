@@ -1,11 +1,14 @@
 # -*- encode: utf-8 -*-
 import sys,csv,time
+reload(sys)
+sys.setdefaultencoding('utf8')
+import os
 
 # =======================
 # Preprocess Step 1:
 # Author: Zhang Xiaoyang, zhangxy.pro@gmail.com
 # Usage: python preprocess_step1_split.py adm.csv output_sorted.csv
-# Require: spid_media_type.csv
+# Require: spid_media_type.csv,adm_conversion.csv
 # Drop unnecessary fields
 # Translate spid into media and adtype; YMDhrs into readable time_stamp
 # split original data into correct sorted and error sorted files
@@ -93,7 +96,7 @@ def decode_time(timeString):
     newTimeString = year + month + day + hour + minute +sec
     return newTimeString
 
-def get_final_line(line):
+def process_line(line):
     mzid = line[0]
     cid = line[2]
     spid = line[3]
@@ -109,6 +112,10 @@ def get_final_line(line):
     time_stamp = decode_time(line[-2])
     isClick = line[-1]
     isCVR = '0'
+    if conv_dict.has_key(mzid):
+        print ('conversion user: %s %s') % (mzid,time_stamp)
+        time.sleep(1)
+        isCVR = '1'
     return [mzid,cid,spid,media,adtype,br,os,time_stamp,isClick,isCVR]
 
 # mzid,cid,spid,media,adtype,br,os,time_stamp,isClick,isCVR
@@ -122,6 +129,17 @@ if __name__ == '__main__':
         adtype = spid_line[2]
         spid_dict[spid] = [media,adtype]
     print "spid_dict complete"
+    conv_dict = {}
+    conv_reader = csv.reader(open(conv_file,'r'),delimiter = ' ')
+    for conv_line in conv_reader:
+        conv_mzid = conv_line[0]
+        conv_time = conv_line[1]
+        if conv_dict.has_key(conv_mzid):
+            conv_dict[conv_mzid].append(conv_time)
+        else:
+            conv_dict[conv_mzid] = [conv_time]
+    print "conv_dict complete"
+
     spid = None
     cnt = 0
     cntErrorSort = 0
@@ -137,16 +155,21 @@ if __name__ == '__main__':
 
         for line in reader:
             cnt += 1
-            final_line = get_final_line(line)
+            final_line = process_line(line)
             # judge current line if error sorted
             current_mzid_num = int(final_line[0].replace("m",""))
-            if (current_mzid_num - correct_mzid_num < 0) or (current_mzid_num - correct_mzid_num > 1):
+            if current_mzid_num - correct_mzid_num < 0:
                 cntErrorSort += 1
-                print ("cnt #%d: m%s, error sort #%d: %s") % (cnt,correct_mzid_num,cntErrorSort,final_line[0])
+                # print ("cnt #%d: m%s, error sort #%d: %s smaller") % (cnt,correct_mzid_num,cntErrorSort,final_line[0])
+                error_writer.writerow(final_line)
+            elif current_mzid_num - correct_mzid_num > 1:
+                cntErrorSort += 1
+                print ("cnt #%d: m%s, error sort #%d: %s larger") % (cnt,correct_mzid_num,cntErrorSort,final_line[0])
                 error_writer.writerow(final_line)
             else:
                 correct_mzid_num = current_mzid_num
                 writer.writerow(final_line)
+
             if cnt % 500000 == 0 and cnt > 0:
                 print 'cnt: ' + str(cnt)
                 print 'ErrorSort cnt: ' + str(cntErrorSort)
