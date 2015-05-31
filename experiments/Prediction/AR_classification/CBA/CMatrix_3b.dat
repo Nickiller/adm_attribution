@@ -1,0 +1,7 @@
+Overall Error : 22.78%
+Confusion Matrix On Training:
+
+(1)	(2)	<--- Classified As
+----	----	
+271	1787	(1): 1
+95	6109	(2): 0

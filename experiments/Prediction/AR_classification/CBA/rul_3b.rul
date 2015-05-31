@@ -1,0 +1,157 @@
+;>>Testing Start from Training Case :2067   End at Case :10328
+;>> Num of Test Case : 8262; Correct Prediction : 6380; Error Rate : 22.779%
+
+;>>The Rules are generated at : MinSup:1.000%, MinConf:100.000% RuleLimit : 80000 LevelLimit : 6 
+
+==NumTrainingCase== 10328
+
+Rule 1:
+	 cnt_click_Search = M
+	 ->	 class = 1
+	 (1.297% 100.000% 134 134 1.297%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 2:
+	 cnt_imp_Ad = L
+	 cnt_click_Ch = L
+	 cnt_imp_Portal = H
+	 ->	 class = 0
+	 (1.569% 81.481% 162 132 1.278%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 3:
+	 cnt_imp_Com = L
+	 cnt_click_Ad = L
+	 cnt_click_Portal = L
+	 cnt_imp_Ch = L
+	 cnt_click_Search = L
+	 cnt_imp_Portal = M
+	 ->	 class = 0
+	 (6.603% 81.232% 682 554 5.364%)
+
+Rule 4:
+	 cnt_click_Com = L
+	 cnt_click_Portal = L
+	 cnt_click_Ch = L
+	 cnt_imp_Social = L
+	 cnt_click_Search = L
+	 cnt_imp_Video = L
+	 ->	 class = 0
+	 (95.517% 77.212% 9865 7617 73.751%)
+
+Rule 5:
+	 cnt_imp_Ch = L
+	 cnt_imp_Portal = L
+	 ->	 class = 1
+	 (91.131% 25.531% 9412 2403 23.267%)
+
+Rule 6:
+	 cnt_imp_Ch = L
+	 ->	 class = 1
+	 (99.448% 25.080% 10271 2576 24.942%)
+
+
+DefaultClass : 	 class = 1
+;==================== Class and Attributes ==============
+
+<<Class>>
+ class : 
+	;;0.250, 2582
+	 = 1
+	;;0.750, 7746
+	 = 0
+
+<<Attributes>>
+(1)  cnt_imp_Ch{Discrete}:
+	;;0.994, 10271
+	 = L
+	;;0.004, 46
+	 = M
+	;;0.001, 11
+	 = H
+(2)  cnt_imp_Com{Discrete}:
+	;;1.000, 10325
+	 = L
+	;;0.000, 2
+	 = M
+	;;0.000, 1
+	 = H
+(3)  cnt_imp_Video{Discrete}:
+	;;0.984, 10166
+	 = L
+	;;0.014, 140
+	 = M
+	;;0.002, 22
+	 = H
+(4)  cnt_imp_Portal{Discrete}:
+	;;0.917, 9467
+	 = L
+	;;0.067, 697
+	 = M
+	;;0.016, 164
+	 = H
+(5)  cnt_imp_Ad{Discrete}:
+	;;0.997, 10295
+	 = L
+	;;0.003, 28
+	 = M
+	;;0.000, 5
+	 = H
+(6)  cnt_imp_Social{Discrete}:
+	;;0.992, 10245
+	 = L
+	;;0.006, 62
+	 = M
+	;;0.002, 21
+	 = H
+(7)  cnt_click_Ch{Discrete}:
+	;;0.995, 10277
+	 = L
+	;;0.004, 46
+	 = M
+	;;0.000, 5
+	 = H
+(8)  cnt_click_Search{Discrete}:
+	;;0.986, 10185
+	 = L
+	;;0.013, 134
+	 = M
+	;;0.001, 9
+	 = H
+(9)  cnt_click_Com{Discrete}:
+	;;1.000, 10326
+	 = L
+	;;0.000, 1
+	 = M
+	;;0.000, 1
+	 = H
+(10)  cnt_click_Video{Discrete}:
+	;;0.999, 10322
+	 = L
+	;;0.000, 5
+	 = M
+	;;0.000, 1
+	 = H
+(11)  cnt_click_Portal{Discrete}:
+	;;0.998, 10303
+	 = L
+	;;0.002, 19
+	 = M
+	;;0.001, 6
+	 = H
+(12)  cnt_click_Ad{Discrete}:
+	;;1.000, 10323
+	 = L
+	;;0.000, 4
+	 = M
+	;;0.000, 1
+	 = H
+(13)  cnt_click_Social{Discrete}:
+	;;0.999, 10318
+	 = L
+	;;0.001, 9
+	 = M
+	;;0.000, 1
+	 = H

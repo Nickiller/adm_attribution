@@ -1,0 +1,247 @@
+;>>Testing Start from Training Case :1034   End at Case :5164
+;>> Num of Test Case : 4131; Correct Prediction : 3155; Error Rate : 23.626%
+
+;>>The Rules are generated at : MinSup:1.000%, MinConf:100.000% RuleLimit : 80000 LevelLimit : 6 
+
+==NumTrainingCase== 5164
+
+Rule 1:
+	 Search1+Search1 = 1
+	 ->	 class = 1
+	 (7.029% 100.000% 363 363 7.029%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 2:
+	 Portal1+Search1 = 1
+	 ->	 class = 1
+	 (3.892% 100.000% 201 201 3.892%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 3:
+	 Search1+Portal1 = 1
+	 ->	 class = 1
+	 (3.641% 100.000% 188 188 3.641%)
+
+Rule 4:
+	 cnt_click_Search = M
+	 ->	 class = 1
+	 (2.595% 100.000% 134 134 2.595%)
+
+Rule 5:
+	 Search1 = 1
+	 ->	 class = 1
+	 (23.160% 99.833% 1196 1194 23.122%)
+
+Rule 6:
+	 Social1+Social1+Social1+Social1+Social1+Social1+Social1 = 0
+	 Social1+Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (1.297% 94.030% 67 63 1.220%)
+
+Rule 7:
+	 cnt_imp_Social = L
+	 Social1+Social1+Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (2.169% 93.750% 112 105 2.033%)
+
+Rule 8:
+	 Social1+Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (3.621% 91.444% 187 171 3.311%)
+
+Rule 9:
+	 cnt_imp_Social = L
+	 cnt_imp_Video = L
+	 Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (3.350% 91.329% 173 158 3.060%)
+
+Rule 10:
+	 cnt_imp_Video = L
+	 Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (4.318% 90.135% 223 201 3.892%)
+
+Rule 11:
+	 Social1+Social1+Social1 = 1
+	 ->	 class = 1
+	 (4.357% 89.778% 225 202 3.912%)
+
+Rule 12:
+	 Social1+Social1+Social1 = 0
+	 cnt_imp_Portal = L
+	 cnt_imp_Video = M
+	 ->	 class = 1
+	 (1.743% 80.000% 90 72 1.394%)
+
+Rule 13:
+	 cnt_imp_Ad = L
+	 cnt_click_Ch = L
+	 Search1 = 0
+	 cnt_imp_Portal = H
+	 ->	 class = 0
+	 (1.607% 72.289% 83 60 1.162%)
+
+Rule 14:
+	 cnt_click_Ch = L
+	 cnt_imp_Video = L
+	 Social1+Social1+Social1 = 0
+	 Search1 = 0
+	 ->	 class = 0
+	 (71.127% 68.745% 3673 2525 48.896%)
+
+
+DefaultClass : 	 class = 1
+;==================== Class and Attributes ==============
+
+<<Class>>
+ class : 
+	;;0.500, 2582
+	 = 1
+	;;0.500, 2582
+	 = 0
+
+<<Attributes>>
+(1)  cnt_imp_Ch{Discrete}:
+	;;0.994, 5135
+	 = L
+	;;0.005, 25
+	 = M
+	;;0.001, 4
+	 = H
+(2)  cnt_imp_Com{Discrete}:
+	;;1.000, 5162
+	 = L
+	;;0.000, 1
+	 = M
+	;;0.000, 1
+	 = H
+(3)  cnt_imp_Video{Discrete}:
+	;;0.978, 5048
+	 = L
+	;;0.019, 100
+	 = M
+	;;0.003, 16
+	 = H
+(4)  cnt_imp_Portal{Discrete}:
+	;;0.918, 4743
+	 = L
+	;;0.064, 329
+	 = M
+	;;0.018, 92
+	 = H
+(5)  cnt_imp_Ad{Discrete}:
+	;;0.996, 5145
+	 = L
+	;;0.003, 17
+	 = M
+	;;0.000, 2
+	 = H
+(6)  cnt_imp_Social{Discrete}:
+	;;0.990, 5112
+	 = L
+	;;0.008, 40
+	 = M
+	;;0.002, 12
+	 = H
+(7)  cnt_click_Ch{Discrete}:
+	;;0.992, 5124
+	 = L
+	;;0.007, 35
+	 = M
+	;;0.001, 5
+	 = H
+(8)  cnt_click_Search{Discrete}:
+	;;0.972, 5021
+	 = L
+	;;0.026, 134
+	 = M
+	;;0.002, 9
+	 = H
+(9)  cnt_click_Com{Discrete}:
+	;;1.000, 5162
+	 = L
+	;;0.000, 1
+	 = M
+	;;0.000, 1
+	 = H
+(10)  cnt_click_Video{Discrete}:
+	;;0.999, 5158
+	 = L
+	;;0.001, 5
+	 = M
+	;;0.000, 1
+	 = H
+(11)  cnt_click_Portal{Discrete}:
+	;;0.995, 5139
+	 = L
+	;;0.004, 19
+	 = M
+	;;0.001, 6
+	 = H
+(12)  cnt_click_Ad{Discrete}:
+	;;0.999, 5160
+	 = L
+	;;0.001, 3
+	 = M
+	;;0.000, 1
+	 = H
+(13)  cnt_click_Social{Discrete}:
+	;;0.998, 5154
+	 = L
+	;;0.002, 9
+	 = M
+	;;0.000, 1
+	 = H
+(14)  Search1{Discrete}:
+	;;0.232, 1196
+	 = 1
+	;;0.768, 3968
+	 = 0
+(15)  Search1+Search1{Discrete}:
+	;;0.070, 363
+	 = 1
+	;;0.930, 4801
+	 = 0
+(16)  Portal1+Search1{Discrete}:
+	;;0.039, 201
+	 = 1
+	;;0.961, 4963
+	 = 0
+(17)  Search1+Portal1{Discrete}:
+	;;0.036, 188
+	 = 1
+	;;0.964, 4976
+	 = 0
+(18)  Search1+Search1+Search1{Discrete}:
+	;;0.025, 127
+	 = 1
+	;;0.975, 5037
+	 = 0
+(19)  Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.031, 159
+	 = 1
+	;;0.969, 5005
+	 = 0
+(20)  Social1+Social1+Social1+Social1{Discrete}:
+	;;0.036, 187
+	 = 1
+	;;0.964, 4977
+	 = 0
+(21)  Social1+Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.028, 143
+	 = 1
+	;;0.972, 5021
+	 = 0
+(22)  Social1+Social1+Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.023, 120
+	 = 1
+	;;0.977, 5044
+	 = 0
+(23)  Social1+Social1+Social1{Discrete}:
+	;;0.044, 225
+	 = 1
+	;;0.956, 4939
+	 = 0

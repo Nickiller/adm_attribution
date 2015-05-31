@@ -1,0 +1,120 @@
+Training for fold: 1
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 1
+Accuracy: 0.8470588
+Precision: 0.9429825 Recall: 0.8052434 F1-score: 0.8686869
+Result for base lr of fold 1
+Accuracy: 0.8094118
+Precision: 0.9227273 Recall: 0.7602996 F1-score: 0.8336756
+===================================
+Training for fold: 2
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 2
+Accuracy: 0.8333333
+Precision: 0.9490741 Recall: 0.7735849 F1-score: 0.8523909
+Result for base lr of fold 2
+Accuracy: 0.8075117
+Precision: 0.9295775 Recall: 0.7471698 F1-score: 0.8284519
+===================================
+Training for fold: 3
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 3
+Accuracy: 0.8169014
+Precision: 0.9142857 Recall: 0.7619048 F1-score: 0.8311688
+Result for base lr of fold 3
+Accuracy: 0.7910798
+Precision: 0.9054726 Recall: 0.7222222 F1-score: 0.803532
+===================================
+Training for fold: 4
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 4
+Accuracy: 0.8376471
+Precision: 0.9417476 Recall: 0.7729084 F1-score: 0.8490153
+Result for base lr of fold 4
+Accuracy: 0.7952941
+Precision: 0.9270833 Recall: 0.7091633 F1-score: 0.8036117
+===================================
+Training for fold: 5
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 5
+Accuracy: 0.8164706
+Precision: 0.8944954 Recall: 0.78 F1-score: 0.8333333
+Result for base lr of fold 5
+Accuracy: 0.7858824
+Precision: 0.8767773 Recall: 0.74 F1-score: 0.802603
+===================================
+Training for fold: 6
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1.. X..Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 6
+Accuracy: 0.7840376
+Precision: 0.9253731 Recall: 0.7072243 F1-score: 0.8017241
+Result for base lr of fold 6
+Accuracy: 0.7464789
+Precision: 0.9100529 Recall: 0.6539924 F1-score: 0.7610619
+===================================
+Training for fold: 7
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 7
+Accuracy: 0.8372642
+Precision: 0.944206 Recall: 0.7971014 F1-score: 0.8644401
+Result for base lr of fold 7
+Accuracy: 0.8113208
+Precision: 0.9454545 Recall: 0.7536232 F1-score: 0.8387097
+===================================
+Training for fold: 8
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 8
+Accuracy: 0.786385
+Precision: 0.9322917 Recall: 0.6964981 F1-score: 0.7973274
+Result for base lr of fold 8
+Accuracy: 0.7746479
+Precision: 0.9259259 Recall: 0.6809339 F1-score: 0.7847534
+===================================
+Training for fold: 9
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 9
+Accuracy: 0.8235294
+Precision: 0.9444444 Recall: 0.7450199 F1-score: 0.8329621
+Result for base lr of fold 9
+Accuracy: 0.8094118
+Precision: 0.9381443 Recall: 0.7250996 F1-score: 0.8179775
+===================================
+Training for fold: 10
+Imp feature list:
+ X..Search1.. X..Search1....Search1.. X..Portal1....Search1.. X..Search1....Portal1.. X..Search1....Search1....Search1.. X..Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1....Social1....Social1....Social1.. X..Social1....Social1..
+Generate imp model...
+Generate base model...
+Result for improved lr of fold 10
+Accuracy: 0.8051643
+Precision: 0.8920188 Recall: 0.76 F1-score: 0.8207343
+Result for base lr of fold 10
+Accuracy: 0.7629108
+Precision: 0.8669951 Recall: 0.704 F1-score: 0.7770419
+===================================

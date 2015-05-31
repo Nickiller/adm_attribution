@@ -3,6 +3,7 @@ import sys,csv,time
 import random
 reload(sys)
 sys.setdefaultencoding('utf8')
+
 from bide_gap import *
 
 '''
@@ -29,7 +30,7 @@ print 'conv:',cnt_conv,'non:',cnt_non,'total:',len(sdb)
 likeli_thre = cnt_conv / cnt_non
 
 pdb_file = 'pdb_' + str(cnt_non / cnt_conv) + '.csv'
-g = Gapbide(sdb, 100, 0, 0, cnt_conv - 1)
+g = Gapbide(sdb, 500, 0, 0, cnt_conv - 1)
 pdb_list = g.run() # [(pattern, sup, likelihood)]
 pdb_list.sort(key = lambda l: l[2], reverse = True)
 pdb_writer = csv.writer(open(pdb_file,'wb'),delimiter = ';')

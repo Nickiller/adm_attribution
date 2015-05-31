@@ -1,0 +1,31 @@
+Call:
+NULL
+
+Deviance Residuals:
+    Min       1Q   Median       3Q      Max
+-3.2410  -0.7942   0.0001   0.4226   2.3246
+
+Coefficients: (3 not defined because of singularities)
+                                                                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)                                                           -0.96574    0.10948  -8.821  < 2e-16 ***
+cnt_imp_Video                                                          0.60748    0.05131  11.840  < 2e-16 ***
+cnt_imp_Portal                                                        -0.16403    0.02405  -6.819 9.16e-12 ***
+cnt_imp_Ad                                                             0.61202    0.14354   4.264 2.01e-05 ***
+cnt_imp_Social                                                         0.17590    0.07600   2.315  0.02063 *
+cnt_click_Ch                                                           0.85832    0.31410   2.733  0.00628 **
+cnt_click_Com                                                          3.37528    1.04911   3.217  0.00129 **
+cnt_click_Video                                                        2.98734    0.52712   5.667 1.45e-08 ***
+cnt_click_Portal                                                       3.50780    0.39928   8.785  < 2e-16 ***
+X..Social1....Social1..                                                2.01975    0.46204   4.371 1.23e-05 ***
+
+(Intercept)        -0.80379    0.10649  -7.548 4.42e-14 ***
+cnt_imp_Video       0.52866    0.04978  10.621  < 2e-16 ***
+cnt_imp_Portal     -0.23678    0.02446  -9.682  < 2e-16 ***
+cnt_imp_Ad          0.51246    0.14317   3.579 0.000344 ***
+cnt_imp_Social      0.41777    0.07405   5.641 1.69e-08 ***
+cnt_click_Ch        0.69111    0.31425   2.199 0.027859 *
+cnt_click_Com       3.21571    1.04819   3.068 0.002156 **
+cnt_click_Video     2.82351    0.52706   5.357 8.46e-08 ***
+cnt_click_Portal    3.43126    0.40739   8.423  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

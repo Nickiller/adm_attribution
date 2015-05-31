@@ -1,0 +1,199 @@
+;>>Testing Start from Training Case :2584   End at Case :12910
+;>> Num of Test Case : 10327; Correct Prediction : 9222; Error Rate : 10.700%
+
+;>>The Rules are generated at : MinSup:1.000%, MinConf:100.000% RuleLimit : 80000 LevelLimit : 6 
+
+==NumTrainingCase== 12910
+
+Rule 1:
+	 Search1 = 1
+	 ->	 class = 1
+	 (2.812% 100.000% 363 363 2.812%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 2:
+	 Portal1+Search1 = 1
+	 ->	 class = 1
+	 (1.557% 100.000% 201 201 1.557%)
+
+;	(Cover%  Conf%  CoverCount SupCount Sup%)
+
+Rule 3:
+	 cnt_click_Search = M
+	 ->	 class = 1
+	 (1.038% 100.000% 134 134 1.038%)
+
+Rule 4:
+	 Search1+Portal1 = 0
+	 Search1+Search1 = 1
+	 ->	 class = 1
+	 (7.823% 99.604% 1010 1006 7.792%)
+
+Rule 5:
+	 Search1+Search1 = 1
+	 ->	 class = 1
+	 (9.295% 99.500% 1200 1194 9.249%)
+
+Rule 6:
+	 cnt_click_Social = L
+	 cnt_click_Ch = L
+	 cnt_imp_Video = L
+	 Social1+Social1+Social1 = 0
+	 Search1+Search1 = 0
+	 ->	 class = 0
+	 (87.343% 89.704% 11276 10115 78.350%)
+
+
+DefaultClass : 	 class = 1
+;==================== Class and Attributes ==============
+
+<<Class>>
+ class : 
+	;;0.200, 2582
+	 = 1
+	;;0.800, 10328
+	 = 0
+
+<<Attributes>>
+(1)  cnt_imp_Ch{Discrete}:
+	;;0.995, 12840
+	 = L
+	;;0.004, 56
+	 = M
+	;;0.001, 14
+	 = H
+(2)  cnt_imp_Com{Discrete}:
+	;;1.000, 12906
+	 = L
+	;;0.000, 3
+	 = M
+	;;0.000, 1
+	 = H
+(3)  cnt_imp_Video{Discrete}:
+	;;0.986, 12729
+	 = L
+	;;0.012, 157
+	 = M
+	;;0.002, 24
+	 = H
+(4)  cnt_imp_Portal{Discrete}:
+	;;0.916, 11824
+	 = L
+	;;0.068, 876
+	 = M
+	;;0.016, 210
+	 = H
+(5)  cnt_imp_Ad{Discrete}:
+	;;0.997, 12873
+	 = L
+	;;0.002, 32
+	 = M
+	;;0.000, 5
+	 = H
+(6)  cnt_imp_Social{Discrete}:
+	;;0.993, 12819
+	 = L
+	;;0.005, 65
+	 = M
+	;;0.002, 26
+	 = H
+(7)  cnt_click_Ch{Discrete}:
+	;;0.996, 12852
+	 = L
+	;;0.004, 52
+	 = M
+	;;0.000, 6
+	 = H
+(8)  cnt_click_Search{Discrete}:
+	;;0.989, 12767
+	 = L
+	;;0.010, 134
+	 = M
+	;;0.001, 9
+	 = H
+(9)  cnt_click_Com{Discrete}:
+	;;1.000, 12907
+	 = L
+	;;0.000, 2
+	 = M
+	;;0.000, 1
+	 = H
+(10)  cnt_click_Video{Discrete}:
+	;;1.000, 12904
+	 = L
+	;;0.000, 5
+	 = M
+	;;0.000, 1
+	 = H
+(11)  cnt_click_Portal{Discrete}:
+	;;0.998, 12884
+	 = L
+	;;0.002, 20
+	 = M
+	;;0.000, 6
+	 = H
+(12)  cnt_click_Ad{Discrete}:
+	;;1.000, 12905
+	 = L
+	;;0.000, 4
+	 = M
+	;;0.000, 1
+	 = H
+(13)  cnt_click_Social{Discrete}:
+	;;0.999, 12900
+	 = L
+	;;0.001, 9
+	 = M
+	;;0.000, 1
+	 = H
+(14)  Search1{Discrete}:
+	;;0.028, 363
+	 = 1
+	;;0.972, 12547
+	 = 0
+(15)  Search1+Search1{Discrete}:
+	;;0.093, 1200
+	 = 1
+	;;0.907, 11710
+	 = 0
+(16)  Portal1+Search1{Discrete}:
+	;;0.016, 201
+	 = 1
+	;;0.984, 12709
+	 = 0
+(17)  Search1+Portal1{Discrete}:
+	;;0.015, 190
+	 = 1
+	;;0.985, 12720
+	 = 0
+(18)  Search1+Search1+Search1{Discrete}:
+	;;0.010, 127
+	 = 1
+	;;0.990, 12783
+	 = 0
+(19)  Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.010, 124
+	 = 1
+	;;0.990, 12786
+	 = 0
+(20)  Social1+Social1+Social1+Social1{Discrete}:
+	;;0.011, 141
+	 = 1
+	;;0.989, 12769
+	 = 0
+(21)  Social1+Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.015, 194
+	 = 1
+	;;0.985, 12716
+	 = 0
+(22)  Social1+Social1+Social1+Social1+Social1+Social1+Social1{Discrete}:
+	;;0.013, 162
+	 = 1
+	;;0.987, 12748
+	 = 0
+(23)  Social1+Social1+Social1{Discrete}:
+	;;0.020, 262
+	 = 1
+	;;0.980, 12648
+	 = 0

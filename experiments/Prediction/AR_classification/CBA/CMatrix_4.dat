@@ -1,0 +1,7 @@
+Overall Error : 10.70%
+Confusion Matrix On Training:
+
+(1)	(2)	<--- Classified As
+----	----	
+1146	932	(1): 1
+173	8076	(2): 0

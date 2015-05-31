@@ -21,16 +21,17 @@ seed = 120 # random.seed(seed)
 if len(sys.argv) == 2:
     sample_ratio = int(sys.argv[1])
 else:
-    sample_ratio = 1
+    sample_ratio = int(raw_input('Please input sample ratio:'))
 params_list = [30,10,13] # days_limit,mins_limit,max_length
 media_type = ['Ch','Search','Com','Video','Portal','Music','Ad','Social']
 
 seq_file = 'sdb_' + str(sample_ratio) + '.csv'
 lr_file = 'lr_' + str(sample_ratio) + '.csv'
+all_file = 'all_' + str(sample_ratio) + '.csv'
 conv_file = 'conv_original.csv'
 seg_file_base = sys.path[0] + '/seg_data/seg_sorted_'
 
-def get_conv_seq(conv_file):
+def get_conv_dict(conv_file):
     with open(conv_file,'r+') as f:
         conv_reader = csv.reader(f,delimiter = ',')
         '''
@@ -50,7 +51,9 @@ def get_conv_seq(conv_file):
             else:
                 conv_dict[mzid]['records'].append(line)
         print ("Time: %s conv_dict complete! Count:%d") % (time.clock(),len(conv_dict))
+    return conv_dict
 
+def get_conv_seq_lr(conv_dict):
     '''
     Generate converted seq
     '''
@@ -70,14 +73,13 @@ def get_conv_seq(conv_file):
             conv_lr = conv_converter.get_lr()
             print conv_seq, conv_lr
             lr_list.append(conv_lr)
-            # print lr_list
             seq_cnt += 1
             seq_len_sum += len(conv_seq) - 2
     print ("Time: %s conv_seq complete! Count:%d Avg length: %d") % (time.clock(),seq_cnt,seq_len_sum/seq_cnt)
     return seq_cnt,seq_list,lr_list
 
-def get_non_conv_seq(files_num, sampled_num = 4):
-    print "Start to gen non conv seq..."
+def get_nonconv_dict(files_num, sampled_num = 4):
+    print "Sample and generate non conv dict..."
     seg_file = seg_file_base + str(files_num) + ".csv"
     start = (files_num - 1) * 3800000
     end = files_num * 3800000
@@ -89,8 +91,6 @@ def get_non_conv_seq(files_num, sampled_num = 4):
     nonconv_dict = {}
     last_mzid = ''
     with open(seg_file,'r+b') as f:
-        # seg_reader = csv.reader(f, delimiter = ",")
-        # for line in seg_reader:
         seg_map = mmap.mmap(f.fileno(), 0, prot=mmap.ACCESS_READ)
         for line in iter(seg_map.readline, ""):
             line = line.replace("\r\n",'').split(',')
@@ -118,7 +118,9 @@ def get_non_conv_seq(files_num, sampled_num = 4):
     nonconv_dict[last_mzid]['records'].sort(key = lambda l:l[7])
     nonconv_dict[last_mzid]['last_time'] = nonconv_dict[last_mzid]['records'][-1][7]
     print ('Time: %s nonconv_dict finished! cnt_mzid: %d') % (time.clock(),cnt)
+    return nonconv_dict
 
+def get_nonconv_seq_lr(nonconv_dict):
     seq_list = []
     lr_list = []
     for mzid in nonconv_dict:
@@ -130,28 +132,54 @@ def get_non_conv_seq(files_num, sampled_num = 4):
         # print ",".join(nonconv_seq)
     return seq_list,lr_list
 
+def output_dict(conv_dict, nonconv_dict = {}):
+    all_writer = csv.writer(open(all_file,'wb'), delimiter = ',')
+    all_header = ['mzid','cid','media','adtype','os','stable24H','stable6M','time_stamp','isClick','isCVR']
+    all_writer.writerow(all_header)
+
+    for mzid in conv_dict:
+        conv_dict[mzid]['records'].sort(key = lambda l:l[7])
+        if conv_dict[mzid]['records'][0][7] > conv_dict[mzid]['last_time']:
+            continue
+        for cline in conv_dict[mzid]['records']:
+            if cline[7] <= conv_dict[mzid]['last_time']:
+                all_writer.writerow(cline + ['1'])
+
+    for mzid in nonconv_dict:
+        all_writer.writerow((nline + ['0']) for nline in nonconv_dict[mzid]['records'])
+    print 'dict output complete.'
+
+def output_seq(seq_list):
+    seq_writer = csv.writer(open(seq_file,'wb'), delimiter = ',')
+    seq_writer.writerow(seq for seq in seq_list)
+    print 'seq output complete.'
+
+def output_lr(lr_list):
+    lr_header = ['mzid','stable24H','stableM'] + ['cnt_imp_' + m for m in media_type] + ['cnt_click_' + m for m in media_type] + ['is_CVR']
+    lr_writer = csv.writer(open(lr_file,'wb'), delimiter = ',')
+    lr_writer.writerow(lr_header)
+    lr_writer.writerow(lr for lr in lr_list)
+    print 'lr output complete.'
+
 # mzid,cid,spid,media,adtype,br,os,time_stamp,isClick,isCVR
 if __name__ == '__main__':
     print "start time: %s" % time.clock()
     print "*" * 40
-    conv_cnt,conv_seq_list,conv_lr_list = get_conv_seq(conv_file)
+    conv_dict = get_conv_dict(conv_file)
+    conv_cnt,conv_seq_list,conv_lr_list = get_conv_seq_lr(conv_dict)
     print "*" * 40
-    # conv_cnt = 2647
+    conv_cnt = 2647
     files_num = random.randint(1,99)
     random.seed(seed)
-    files_num = 3
+    files_num = 1
     sampled_num = conv_cnt * sample_ratio
     print 'sampled non-conv num:',sampled_num
-    nonconv_seq_list,nonconv_lr_list = get_non_conv_seq(files_num, sampled_num)
+    nonconv_dict = get_nonconv_dict(files_num, sampled_num)
+    nonconv_seq_list,nonconv_lr_list = get_nonconv_seq_lr(nonconv_dict)
     seq_list = conv_seq_list + nonconv_seq_list
     lr_list = conv_lr_list + nonconv_lr_list
-    # seq_writer = csv.writer(open(seq_file,'wb'), delimiter = ',')
-    # for seq in seq_list:
-    #     seq_writer.writerow(seq)
-    lr_header = ['mzid','stable24H','stableM'] + ['cnt_imp_' + m for m in media_type] + ['cnt_click_' + m for m in media_type] + ['is_CVR']
-    lr_writer = csv.writer(open(lr_file,'wb'), delimiter = ',')
-    lr_writer.writerow(lr_header)
-    for lr in lr_list:
-        lr_writer.writerow(lr)
+    output_dict(conv_dict,nonconv_dict)
+    # output_seq(seq_list)
+    # output_lr(lr_list)
     print '*' * 40
     print ('Total cnt: %s. Finished!') % len(seq_list)

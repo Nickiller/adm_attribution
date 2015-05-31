@@ -1,0 +1,27 @@
+
+Dear CBA users,
+
+     CBA(UNIX) is a unix version of CBA. This version is purely designed for 
+testing. Hence, interface is not a major concern. The purpose of releasing
+this version is to let researchers have better understanding of CBA.  
+
+     CBA(UNIX) has 2 major operations, classification & cross-validation. 
+The classification portion cannot take continuous attributs, and you have
+to discretise it before running.
+   
+     In the cross-validation portion, split will be done exactly following 
+the C4.5. In each split, discretiser only runs against training part. Testing 
+part will not be seen to discretiser. 
+
+     You enter cross-validation options from command line (please refer to
+program for more details). 
+
+Check List:
+cab_sun_s : executable in SunOS 4.0 with Small Rule support
+cba_sun_l : executable in SunOS 4.0 without Small Rule support
+cab_dec_s : executable in Dec Alpha with Small Rule support
+cba_dec_l : executable in Dec Alpha without Small Rule support
+
+discretise : MLC discretiser   (SunOS 4.0, no Dec Alpha version)
+anneal.data & anneal.names : testing data
+heart.data & heart.names   : testing data

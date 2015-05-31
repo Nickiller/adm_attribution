@@ -1,0 +1,27 @@
+1,0
+
+cnt_imp_Ch:	continuous
+cnt_imp_Search:	continuous
+cnt_imp_Com:	continuous
+cnt_imp_Video:	continuous
+cnt_imp_Portal:	continuous
+cnt_imp_Music:	continuous
+cnt_imp_Ad:	continuous
+cnt_imp_Social:	continuous
+cnt_click_Ch:	continuous
+cnt_click_Search:	continuous
+cnt_click_Com:	continuous
+cnt_click_Video:	continuous
+cnt_click_Portal:	continuous
+cnt_click_Music:	continuous
+cnt_click_Ad:	continuous
+Search1:	1,?
+Search1+Search1:	1,?
+Portal1+Search1:	1,?
+Search1+Portal1:	1,?
+Search1+Search1+Search1:	1,?
+Social1+Social1+Social1+Social1+Social1:	1,?
+Social1+Social1+Social1+Social1:	1,?
+Social1+Social1+Social1+Social1+Social1+Social1:	1,?
+Social1+Social1+Social1+Social1+Social1+Social1+Social1:	1,?
+Social1+Social1+Social1:	1,?

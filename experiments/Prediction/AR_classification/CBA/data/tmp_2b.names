@@ -1,0 +1,15 @@
+1,0
+
+cnt_imp_Ch:	L,M,H
+cnt_imp_Com:	L,M,H
+cnt_imp_Video:	L,M,H
+cnt_imp_Portal:	L,M,H
+cnt_imp_Ad:	L,M,H
+cnt_imp_Social:	L,M,H
+cnt_click_Ch:	L,M,H
+cnt_click_Search:	L,M,H
+cnt_click_Com:	L,M,H
+cnt_click_Video:	L,M,H
+cnt_click_Portal:	L,M,H
+cnt_click_Ad:	L,M,H
+cnt_click_Social:   L,M,H
