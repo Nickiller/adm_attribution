@@ -10,3 +10,4 @@ dataset/
 *.docx
 *.rar
 .db
+experiments/HMM/minFunc_2012/minFunc/compiled/
